@@ -3,9 +3,14 @@
 import MySQLdb
 import serial
 import time
+from mysqldb_connection import dsn
 
 # Open database connection
-db = MySQLdb.connect("x","y","z", "a" )
+db = MySQLdb.connect( host=dsn['host'], 
+		      user=dsn['user'],
+		      passwd=dsn['passwd'],
+		      db=dsn['db'])
+
 ser = serial.Serial('COM3', 9600)
 
 while(1):
