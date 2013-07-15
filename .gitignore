@@ -19,3 +19,6 @@ mysqldb_connection.py
 *.exe
 *.out
 *.app
+
+# Python
+*.pyc
