@@ -11,7 +11,8 @@ db = MySQLdb.connect( host=dsn['host'],
 		      passwd=dsn['passwd'],
 		      db=dsn['db'])
 
-ser = serial.Serial('COM3', 9600)
+# ser = serial.Serial('COM3', 9600)
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
 while(1):
 
@@ -36,4 +37,5 @@ while(1):
 
 
    time.sleep(1)
-   ser.write(d0)
+   #Convert integer recieved from database and send as string
+   ser.write(bin(d0))
